@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.coincap.data.model.markets.DataModel3
 import com.example.coincap.databinding.FragmentMarketsDetailsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MarketsDetailsFragment : Fragment() {
 
     private var _binding: FragmentMarketsDetailsBinding? = null

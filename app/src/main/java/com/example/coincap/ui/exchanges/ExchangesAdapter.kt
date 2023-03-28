@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coincap.R
-import com.example.coincap.data.model.assets.DataModel
 import com.example.coincap.data.model.exchanges.DataModel2
 import com.example.coincap.databinding.ItemExchangesBinding
 

@@ -8,25 +8,22 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiDetails {
 
-    val client = OkHttpClient.Builder()
-        .addInterceptor(HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        })
-        .build()
+    const val BASE_URL = "https://api.coincap.io"
+    const val BASE_URL_Assets = "/v2/assets"
+    const val BASE_URL_Rates = "/v2/rates"
+    const val BASE_URL_Exchanges = "/v2/exchanges"
+    const val BASE_URL_Markets = "/v2/markets"
 
-    const val BASE_URL_Assets = "https://api.coincap.io/v2/assets/"
-
-    fun getInstance(): Retrofit =
+    fun getInstance(baseUrl: String): Retrofit =
         Retrofit.Builder()      //its pattern that helps build an object with different properties
-            .baseUrl(BASE_URL_Assets)  // setting the common BASE url for all
+            .baseUrl(baseUrl)  // setting the common BASE url for all
             .addConverterFactory(GsonConverterFactory.create(Gson()))    //Convert your JSON data to Data class
-            .client(client)
             .build()     // finalize the object/builder
 
+}
 
-    const val BASE_URL_Rates = "https://api.coincap.io/v2/rates/"
 
-    fun getRates(): Retrofit =
+   /* fun getRates(): Retrofit =
         Retrofit.Builder()      //its pattern that helps build an object with different properties
             .baseUrl(BASE_URL_Rates)  // setting the common BASE url for all
             .addConverterFactory(GsonConverterFactory.create(Gson()))    //Convert your JSON data to Data class
@@ -34,7 +31,7 @@ object ApiDetails {
             .build()     // finalize the object/builder
 
 
-    const val BASE_URL_Exchanges = "https://api.coincap.io/v2/exchanges/"
+
 
     fun getExchanges(): Retrofit =
         Retrofit.Builder()      //its pattern that helps build an object with different properties
@@ -43,12 +40,11 @@ object ApiDetails {
             .client(client)
             .build()     // finalize the object/builder
 
-    const val BASE_URL_Markets = "https://api.coincap.io/v2/markets/"
+
 
     fun getMarkets(): Retrofit =
         Retrofit.Builder()      //its pattern that helps build an object with different properties
             .baseUrl(BASE_URL_Markets)  // setting the common BASE url for all
             .addConverterFactory(GsonConverterFactory.create(Gson()))    //Convert your JSON data to Data class
             .client(client)
-            .build()     // finalize the object/builder
-}
+            .build()     // finalize the object/builder*/
